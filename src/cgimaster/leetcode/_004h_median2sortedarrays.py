@@ -5,3 +5,6 @@ class Solution:
         :type nums2: List[int]
         :rtype: float
         """
+
+assert Solution.findMedianSortedArrays([1, 3],[2]) == 2.0
+assert Solution.findMedianSortedArrays([1, 2],[3,4]) == 2.5

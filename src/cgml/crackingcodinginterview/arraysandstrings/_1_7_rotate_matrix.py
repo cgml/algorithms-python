@@ -14,6 +14,9 @@ def rotate_matrix(m):
             rotate_point(m,idx,L)
     return m
 
+def rotate_matrix_zip(m):
+    return [v[::-1] for v in zip(*m)]
+
 m1 = [[1,2,3],[4,5,6],[7,8,9]]
 out1 = [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
 
@@ -22,3 +25,4 @@ out2 = [[13, 9, 5, 1], [14, 10, 6, 2], [15, 11, 7, 3], [16, 12, 8, 4]]
 
 assert rotate_matrix(m1)==out1
 assert rotate_matrix(m2)==out2
+assert rotate_matrix_zip([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]])==out2

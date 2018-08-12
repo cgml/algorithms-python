@@ -1,3 +1,13 @@
+'''
+Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Solution:
+Two indexes (pointing to first zero and next element to move left) with inplace replacements.
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+'''
 def move_zeros(a):
     zeroidx, nonzeroidx = 0, 0
     while zeroidx < len(a) and nonzeroidx < len(a):

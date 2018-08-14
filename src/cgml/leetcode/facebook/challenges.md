@@ -85,3 +85,94 @@ Example 2:
 Input: "race a car"
 Output: false
 ```
+
+## Minimum Size Subarray Sum
+Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
+
+Example: 
+```
+Input: s = 7, nums = [2,3,1,2,4,3]
+Output: 2
+Explanation: the subarray [4,3] has the minimal length under the problem constraint.
+```
+Follow up:
+If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log n).
+
+
+## Valid Parentheses
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Note that an empty string is also considered valid.
+
+Example 1:
+```
+Input: "()"
+Output: true
+```
+Example 2:
+```
+Input: "()[]{}"
+Output: true
+```
+Example 3:
+Input: "(]"
+Output: false
+```
+Example 4:
+Input: "([)]"
+Output: false
+```
+Example 5:
+```
+Input: "{[]}"
+Output: true
+```
+
+# Linked Lists
+## Remove Nth Node From End of List
+Given a linked list, remove the n-th node from the end of list and return its head.
+
+Example:
+```
+Given linked list: 1->2->3->4->5, and n = 2.
+After removing the second node from the end, the linked list becomes 1->2->3->5.
+```
+Note:
+
+Given n will always be valid.
+
+Follow up:
+
+Could you do this in one pass?
+
+
+## Flatten Binary Tree to Linked List
+Given a binary tree, flatten it to a linked list in-place.
+
+For example, given the following tree:
+```
+    1
+   / \
+  2   5
+ / \   \
+3   4   6
+```
+The flattened tree should look like:
+```
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+         \
+          6
+```
+

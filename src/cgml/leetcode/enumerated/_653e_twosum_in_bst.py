@@ -1,19 +1,11 @@
 from cgml.leetcode.enumerated.utils import *
 class Solution:
-    def twosums(self, root, sums, t):
+    def findTarget(self, root, t, sums=None):
         if root is None: return False
-        if sums.get(root.val) is not None: return True
+        if sums is None: sums = {}
+        if root.val in sums: return True
         sums[t - root.val] = root.val
-        return self.twosums(root.left, sums, t) or self.twosums(root.right, sums, t)
-
-    def findTarget(self, root, t):
-        """
-        :type root: TreeNode
-        :type k: int
-        :rtype: bool
-        """
-        sums = {}
-        return self.twosums(root, sums, t)
+        return self.findTarget(root.left, t, sums) or self.findTarget(root.right, t, sums)
 
     def findTargetBFS(self, root, k):
         if not root: return False

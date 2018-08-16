@@ -243,6 +243,24 @@ The root-to-leaf path 4->9->1 represents the number 491.
 The root-to-leaf path 4->0 represents the number 40.
 Therefore, sum = 495 + 491 + 40 = 1026.
 
+## 215. Kth Largest Element in an Array
+
+Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+Example 1:
+```
+Input: [3,2,1,5,6,4] and k = 2
+Output: 5
+```
+Example 2:
+```
+Input: [3,2,3,1,2,4,5,5,6] and k = 4
+Output: 4
+```
+Note: 
+You may assume k is always valid, 1 ≤ k ≤ array's length.
+
+
 ## 270. Closest Binary Search Tree Value
 Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.
 
@@ -261,6 +279,30 @@ Input: root = [4,2,5,1,3], target = 3.714286
 1   3
 
 Output: 4
+```
+
+## 273. Integer to English Words (Arrays  & Strings: Hard)
+Convert a non-negative integer to its english words representation. Given input is guaranteed to be less than 231 - 1.
+
+Example 1:
+```
+Input: 123
+Output: "One Hundred Twenty Three"
+```
+Example 2:
+```
+Input: 12345
+Output: "Twelve Thousand Three Hundred Forty Five"
+```
+Example 3:
+```
+Input: 1234567
+Output: "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven"
+```
+Example 4:
+```
+Input: 1234567891
+Output: "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One"
 ```
 
 ## 653. Two Sums V4 - input BST (Trees: Easy)
@@ -316,5 +358,6 @@ Output: return the tree root node representing the following tree:
        \
         1
 ```
+
 Note:
 The size of the given array will be in the range [1,1000].

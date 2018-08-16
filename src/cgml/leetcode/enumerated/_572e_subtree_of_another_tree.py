@@ -3,11 +3,7 @@ class Solution:
     def isEqual(self, s, t):
         if s is None and t is None: return True
         if s is None or t is None: return False
-        print('compare: {}, {}'.format(s,t))
-        result = s.val == t.val
-        result = result and self.isEqual(s.right, t.right)
-        result = result and self.isEqual(s.left, t.left)
-        return result
+        return s.val == t.val and self.isEqual(s.right, t.right) and self.isEqual(s.left, t.left)
 
     def isSubtree(self, s, t):
         """

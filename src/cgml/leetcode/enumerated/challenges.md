@@ -264,6 +264,39 @@ The root-to-leaf path 4->9->1 represents the number 491.
 The root-to-leaf path 4->0 represents the number 40.
 Therefore, sum = 495 + 491 + 40 = 1026.
 
+## 200. Number of Islands
+Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. 
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. 
+You may assume all four edges of the grid are all surrounded by water.
+
+Example 1:
+```
+Input:
+11110
+11010
+11000
+00000
+
+Output: 1
+```
+
+Example 2:
+```
+Input:
+11000
+11000
+00100
+00011
+
+Output: 3
+```
+
+```
+Solution Summary:
+Recursively explore islands and use another memory grid to memorize visited cells.
+
+```
+
 ## 215. Kth Largest Element in an Array
 
 Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
@@ -280,6 +313,27 @@ Output: 4
 ```
 Note: 
 You may assume k is always valid, 1 ≤ k ≤ array's length.
+
+## 261. Graph Valid Tree (Trees & Graphs: Medium)
+Given n nodes labeled from 0 to n-1 and a list of undirected edges (each edge is a pair of nodes), write a function to check whether these edges make up a valid tree.
+
+Example 1:
+```
+Input: n = 5, and edges = [[0,1], [0,2], [0,3], [1,4]]
+Output: true
+```
+Example 2:
+```
+Input: n = 5, and edges = [[0,1], [1,2], [2,3], [1,3], [1,4]]
+Output: false
+```
+Note: you can assume that no duplicate edges will appear in edges. Since all edges are undirected, [0,1] is the same as [1,0] and thus will not appear together in edges.
+
+```
+Solution Summary: 
+Union Find algorithm. Union edges and return False if they previously had same root.
+
+```
 
 
 ## 270. Closest Binary Search Tree Value
@@ -356,7 +410,7 @@ Input: root = [5,3,6,2,4,null,null,1], p = 6
 Output: null
 ```
 
-## 314. Binary Tree Vertical Order Traversal (Trees: )
+## 314. Binary Tree Vertical Order Traversal (Trees: Medium)
 
 Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).
 

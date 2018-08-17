@@ -335,6 +335,59 @@ Union Find algorithm. Union edges and return False if they previously had same r
 
 ```
 
+## 269. Alien Dictionary (Arrays/Trees: Hard)
+There is a new alien language which uses the latin alphabet. However, the order among letters are unknown to you. You receive a list of non-empty words from the dictionary, where words are sorted lexicographically by the rules of this new language. Derive the order of letters in this language.
+
+Example 1:
+```
+Input:
+[
+  "wrt",
+  "wrf",
+  "er",
+  "ett",
+  "rftt"
+]
+
+Output: "wertf"
+```
+Example 2:
+```
+Input:
+[
+  "z",
+  "x"
+]
+
+Output: "zx"
+```
+Example 3:
+```
+Input:
+[
+  "z",
+  "x",
+  "z"
+] 
+
+Output: "" 
+Explanation: The order is invalid, so return "".
+```
+Note:
+
+You may assume all letters are in lowercase.
+You may assume that if a is a prefix of b, then a must appear before b in the given dictionary.
+If the order is invalid, return an empty string.
+There may be multiple valid order of letters, return any one of them is fine.
+
+```
+Solution summary: 
+1. Create pairs = edges from data and create alphabet characters
+2. Iteratively 
+    a. add to output list root vertices (source vertices for each edge that is not present in any edges as destination)
+    b. cut them off from the graph.
+  
+```
 
 ## 270. Closest Binary Search Tree Value
 Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.

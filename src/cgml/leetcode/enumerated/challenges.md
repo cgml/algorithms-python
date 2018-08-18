@@ -141,6 +141,27 @@ Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 ```
 
+## 017. Letter Combinations of a Phone Number (Backtracking: Medium)
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
+
+A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+
+Example:
+```
+Input: "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+```
+Note:
+Although the above answer is in lexicographical order, your answer could be in any order you want.
+
+```
+Solution summary:
+Use DFS with depth index and propogate memory output string. 
+When depth reaches output len add current memory string to solution list
+
+```
+
+
 ## 018. 4 Sum: Medium
 Given an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target.
 

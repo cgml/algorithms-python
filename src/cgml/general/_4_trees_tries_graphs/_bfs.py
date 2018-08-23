@@ -1,4 +1,4 @@
-from cgimaster.general._4_graphs._0_toolset import *
+from cgml.general._4_graphs.utils import *
 
 
 def bfs(g,start, target):

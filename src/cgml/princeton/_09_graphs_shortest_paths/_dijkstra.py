@@ -6,12 +6,12 @@ Constraints: Works on graphs with non-negative cost of edges
 from collections import defaultdict
 from heapq import *
 
-def dijkstra(edges, f, t):
+def dijkstra(edges, start, t):
     g = defaultdict(list)
     for l,r,c in edges:
         g[l].append((c,r))
 
-    q, seen, mins = [(0,f,())], set(), {f: 0}
+    q, seen, mins = [(0, start, ())], set(), {start: 0}
     while q:
         (cost,v1,path) = heappop(q)
         if v1 not in seen:

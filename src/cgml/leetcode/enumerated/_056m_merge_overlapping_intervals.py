@@ -22,4 +22,3 @@ class Solution(object):
             else:
                 result.append(Interval(i[0], i[1]))
         return result
-

@@ -21,5 +21,5 @@ class KruskalMST:
         pq = PriorityQueue()
         for edge in self.G:
             pq.put(edge)
-
+            #TODO
 

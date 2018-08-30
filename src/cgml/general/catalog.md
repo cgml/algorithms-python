@@ -11,7 +11,7 @@ Problems: atoi, reverse integer, count bits, parity
 * Radix: Key Indexing, LSD, MSD
 
 ### 01B. Selection
-- Quick Select 
+* Quick Select 
 
 ### 01C. Searching
 * Binary Search
@@ -49,6 +49,7 @@ Problems: Runner, Reverse, Midpoint, Cycles, Merge K Lists
 ### 08A. BT, BST, B BST
 * Binary Trees vs Binary Search Trees vs Balanced BSTs
 * API & Implementation
+* Search, Insertion, Deletion
 - Rebalancing
 
 ### 08B. BST Geometrical Applications

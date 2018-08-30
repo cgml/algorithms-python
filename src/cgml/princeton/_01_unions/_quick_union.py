@@ -8,7 +8,7 @@ Union: O(n) - worst
 class QuickUnion(UnionFind):
 
     def _root(self, p):
-        while self.ids[p] != p: p = self.ids
+        while self.ids[p] != p: p = self.ids[p]
         return p
 
     def find(self, p:int, q:int) -> bool:

@@ -17,9 +17,9 @@ class Solution:
         while queue:
             entry = queue.popleft()
             cloned_node = self.getNode(mem, entry.label)
-            if not cloned_node.neighbors:
-                for vertex in entry.neighbors:
+            if not cloned_node.edges:
+                for vertex in entry.edges:
                     vertex_clone = self.getNode(mem, vertex.label)
-                    cloned_node.neighbors.append(vertex_clone)
+                    cloned_node.edges.append(vertex_clone)
                     queue.append(vertex)
         return mem[node.label]

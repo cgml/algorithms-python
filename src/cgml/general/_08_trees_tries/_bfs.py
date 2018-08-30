@@ -1,4 +1,4 @@
-from cgml.general._4_graphs.utils import *
+from cgml.general._4_trees_tries_graphs.utils import *
 
 
 def bfs(g,start, target):

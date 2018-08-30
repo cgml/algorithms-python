@@ -20,6 +20,10 @@ class Solution(object):
 
         return _quicksort(array, begin, end)
 
+    def flip(self, nums, s, e):
+        li, ri = s, e
+        while li<ri: nums[ri], nums[li], li, ri = nums[li], nums[ri],li+1,ri-1
+
     def nextPermutation(self, nums):
         """
         :type nums: List[int]
@@ -34,6 +38,8 @@ class Solution(object):
             if nums[minidy] > nums[idy] and nums[idy] > nums[idx]: minidy = idy
 
         nums[idx], nums[minidy] = nums[minidy], nums[idx]
-        self.quicksort(nums, idx + 1)
-
-print(Solution().nextPermutation([1,2,4,3,2,1]),)
+        #self.quicksort(nums, idx + 1)
+        self.flip(nums,idx+1,len(nums)-1)
+a = [1,2,4,3,2,1]
+Solution().nextPermutation(a)
+print(a)

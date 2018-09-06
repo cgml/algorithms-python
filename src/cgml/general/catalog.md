@@ -75,13 +75,16 @@ Problems: Runner, Reverse, Midpoint, Cycles, Merge K Lists
 ## 10. Graphs
 * Traversal: DFS, BFS
 * Cycles detection
+    Bellman-Ford (negative cycles)
 * Topological Sort (DAGs)
 * Connected Components
 - Strongly Connected Components
-- Minimum Spanning Trees: Greedy, Kruskal (-), Prim (-)
-- Maxflow & Mincut: Ford Fulkerson (-)
+- Minimum Spanning Trees:
+    Greedy, Kruskal (-), Prim (-)
+- Maxflow & Mincut:
+    Ford Fulkerson (-)
 * Shortest paths: 
-    * DFS with early stop, 
+    * BFS with early stop,
     - Best First Search, 
     - Dijkstra, 
     - A*, 
@@ -107,4 +110,35 @@ Problems: Runner, Reverse, Midpoint, Cycles, Merge K Lists
 
 ## 15. Regular Expressions
 
-## 16. Parallel Computing
+## 16. Parallel Computing / Algorithms:
+* Models
+    Data Parallel
+    Task Graph
+    Work Pool
+    Master Slave
+    Producer - Consumer / Pipeline
+    Hybrid
+* Parallel Random Access Machines
+* Parallel Algorithm Structure
+    Linked List
+    Arrays
+    Hypercube Network
+* Design Techniques
+    Divide and conquer
+    Greedy Method
+    Dynamic Programming
+    Backtracking
+    Branch & Bound
+    Linear Programming
+* Algorithms:
+    Matrix Mul, Sort, Search, Graph (Search, MST, Shortest Path, Coloring)
+* Computers: SISD, SIMD, MISD, MIMD
+* Analysis: TC, #Proc, Total Cost
+
+References:
+    Princeton Algo
+    Stanford Algo
+    Algorithmic Toolbox
+    https://www.tutorialspoint.com/parallel_algorithm
+    Geeks4geeks
+    LeetCode

@@ -1,4 +1,4 @@
-from cgml.general._8_recursion_and_dp.utils import *
+from cgml.general._12_recursion_dp_backtracking.utils import *
 
 def change_dp_count(target,denoms):
     minnums = [0]*(target+1)
@@ -15,7 +15,7 @@ def change_dp_count(target,denoms):
 def change_dp(target,denoms):
     minnums = [[]]*(target+1)
     for m in range(1,target+1):
-        minnums[m]=[1]*target # =~ infinity
+        minnums[m]=[1]*target # =~ infinity. assume we have coin with denom 1
         for coin in denoms:
             if m >= coin:
                 numcoins = minnums[m-coin] + [coin]

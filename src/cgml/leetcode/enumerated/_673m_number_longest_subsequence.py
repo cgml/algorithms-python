@@ -1,5 +1,5 @@
 class Solution:
-    def numberLS(self, nums):
+    def findNumberOfLIS(self, nums):
         N = len(nums)
         lengths = [0]*N
         counts = [1]*N
@@ -14,7 +14,7 @@ class Solution:
         maxlength = max(lengths)
         return sum([v for idx, v in enumerate(counts) if lengths[idx] == maxlength])
 
-assert Solution().numberLS([1,3,5,4,7]) == 2
-assert Solution().numberLS([1,3,5,4,7,10]) == 2
-assert Solution().numberLS([2,2,2,2,2]) == 5
-assert Solution().numberLS([3,2,2,2,2]) == 5
+assert Solution().findNumberOfLIS([1, 3, 5, 4, 7]) == 2
+assert Solution().findNumberOfLIS([1, 3, 5, 4, 7, 10]) == 2
+assert Solution().findNumberOfLIS([2, 2, 2, 2, 2]) == 5
+assert Solution().findNumberOfLIS([3, 2, 2, 2, 2]) == 5

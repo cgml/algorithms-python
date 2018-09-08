@@ -24,3 +24,9 @@ class Solution:
             if t is not None and counts[t]>0: pq.put((-counts[t],t))
             result += 1
         return result
+
+    def leastIntervalAnalytical(self, tasks, N):
+        task_counts = Counter(tasks).values()
+        M = max(task_counts)
+        Mct = task_counts.count(M)
+        return max(len(tasks), (M - 1) * (N + 1) + Mct)

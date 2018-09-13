@@ -1,27 +1,28 @@
-# Primitives
+# Primitives (5)
     Bits
     Multiplications, Square Roots
     Prime
     
-# Arrays
+# Arrays (20)
     1D
     Matrices
     Sparse Vectors and Matrices
     
     Tasks:
         Search: Binary
-        Sort:        
+        Sort: Merge, Quick       
+        Selection: QuickSelect
         Operations: Multiply, Merge, Union (Find, Union) 
         Count: Increasing, Decreasing, Mixed
         Permute: 
         
-# Linked Lists
+# Linked Lists (5)
 
 
-# Stacks & Queues
+# Stacks & Queues (5)
 
 
-# Trees
+# Trees (20)
     Types:
         Binary, BST, Heap & Priority Queue
         Segment Tree, Interval Tree, KD Trees, ND Arrays
@@ -34,19 +35,19 @@
         Single Item Search & Traversal: Find prev/next in-order, Find by key - BFS, DFS,
         Geometrical Applications: Range Search, Line Segment Intersection:
 
-# Symbol Tables & Hashing
+# Symbol Tables & Hashing (10)
     Hash Tables
     Bloom Filters
     BST
 
-# Strings
+# Strings (10)
     Tasks:
         Search - Substring KMP, RBK
         Keywords search, Longest Repeating Substring - Suffix Arrays
         Sort: Radix LSD, MSD
         Pattern matching - Finite Automata
 
-# Graphs:
+# Graphs: (35 -> 150)
     Types & Strucutre:
         Undirectional, Directional, DAGs, Disconnected
         Not weighted. Weighted (Positive Integers, Pos&Neg Integers, Floats)
@@ -65,13 +66,21 @@
         Traveling Salesman
 
 
-# Paradigms
+# Paradigms (5)
     D&A
     Greedy 
     Backtracking
     DP
     Branch & Bound
 
-# Math 
-# Randomized
-# Game Theory
+# Math (50)
+    Linear Algebra
+    Combinatorics
+    Probability
+    Limits
+    Differential
+    Integrals
+    
+# Randomized (5)
+
+# Game Theory (5)

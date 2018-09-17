@@ -11,7 +11,7 @@ Problem example - Precedence scheduling:
 
 from collections import deque
 
-class Soltion:
+class TopologicalSort:
     order = None
     marked = None
     def dfs(self, g, v):
@@ -38,4 +38,4 @@ g = {
     6:[0,4]
 }
 
-print(Soltion().topologicalSort(g))
+print(TopologicalSort().topologicalSort(g))

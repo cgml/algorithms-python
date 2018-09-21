@@ -26,7 +26,7 @@
     Types:
         Binary, BST, Heap & Priority Queue
         Segment Tree, Interval Tree, KD Trees, ND Arrays
-        Self-balancing (AVL, RB)
+        Self-balancing (2-3, RB, B)
         
 
 

@@ -31,6 +31,39 @@ class SolutionBFS(object):
             elif cnt < 0: return False
         return cnt == 0
 
+
+class Solution(object):
+    def _valid(self, s):
+        counter = 0
+        for c in s:
+            if c == ")":
+                counter -= 1
+            elif c == "(":
+                counter += 1
+            if counter < 0: return False
+        return counter == 0
+
+    def removeInvalidParentheses(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+        result = self.helper([s])
+        return [k for k in result] if len(result) > 0 else [s.replace("(").replace(")")]
+
+    def helper(self, candidates):
+        result = set()
+        for c in candidates:
+            if self._valid(c): result.add(c)
+        if len(result) > 0: return result
+
+        newcandidates = set()
+        for cs in candidates:
+            for idx, c in enumerate(cs):
+                if c in ['(', ')']: newcandidates.add(cs[:idx] + cs[idx + 1:])
+        return self.helper(newcandidates)
+
+
 '''
 DFS or backtracking solution. It's 10X faster than optimized BFS.
     Limit max removal rmL and rmR for backtracking boundary. Otherwise it will exhaust all possible valid substrings, not shortest ones.

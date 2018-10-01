@@ -17,7 +17,7 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
 
 '''
-Sweep Line Algorithm to find all intersections of array of orthogonal lines
+Sweep Line Algorithm to find all intersections of array of orthogonal lines on 2D plane
 
 Process start / end points of horizontal lines as events to add / remove line point to BST O(n)
 For each vertical line perform search range O(R + log n)
@@ -27,6 +27,7 @@ TC: O(n*(R+ logn)
 
 '''
 import heapq
+import matplotlib.pyplot as plt
 
 class Node:
     def __init__(self, k, v):
@@ -112,6 +113,7 @@ for i in range(100):
     hlines.append((h1, v1, h1+h2, v1))
 
 result = sweep_line(vlines,hlines)
+plt.hlines([hlines])
 for item in result:
     vl, hl = item
     print('Iter-section: ({}x{}), H:{}, V:{}'.format(vl[0],hl[1], item[1], item[0]))

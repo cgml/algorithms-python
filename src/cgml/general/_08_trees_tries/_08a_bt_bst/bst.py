@@ -58,14 +58,8 @@ class BST:
         if root.val > key: root.left = self._delete(root.left, key)
         elif root.val < key: root.right = self._delete(root.right, key)
         else:
-            if not root.left:
-                right = root.right
-                del root
-                return right
-            elif not root.right:
-                left = root.left
-                del root
-                return left
+            if not root.left: return root.right
+            elif not root.right: return root.left
             else:
                 successor = root.right
                 while successor.left: successor = successor.left
@@ -79,12 +73,8 @@ class BST:
         return self._search(self.root, k)
 
     def _search(self, root, k):
-        if root is None or root.val == k:
-            return root
-        elif root.val < k:
-            return self._search(root.right, k)
-        else:
-            return self._search(root.left, k)
+        if root is None or root.val == k: return root
+        return self._search(root.right, k) if root.val < k else self._search(root.left, k)
 
     def print(self):
         self._inorder(self.root)

@@ -22,3 +22,14 @@ class Solution(object):
             else:
                 result.append(Interval(i[0], i[1]))
         return result
+
+class Solution2:
+    def merge(self, intervals):
+        h, result = [], []
+        for i in intervals: heapq.heappush(h,(i.start,i.end))
+        while h:
+            start, end = heapq.heappop(h)
+            cur = [start,end]
+            while h and h[0][0] <= cur[1]:  cur[1]=max(heapq.heappop(h)[1], cur[1])
+            result.append(cur)
+        return result

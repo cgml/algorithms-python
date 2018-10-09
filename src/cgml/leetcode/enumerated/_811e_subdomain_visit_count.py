@@ -13,3 +13,4 @@ class Solution(object):
                 counts[dcur] = counts.get(dcur, 0) + int(cnt)
                 d.pop(0)
         return ['{} {}'.format(str(counts[k]), k) for k in counts]
+

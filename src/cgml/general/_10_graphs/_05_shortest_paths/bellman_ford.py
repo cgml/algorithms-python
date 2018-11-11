@@ -15,45 +15,15 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMA
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 '''
-
-from collections import defaultdict, deque
-from sys import maxsize
+from collections import defaultdict
 
 def build_graph(edges):
-    G, V = defaultdict(list), set()
+    G, V = defaultdict(defaultdict), set()
     for v1,v2,w in edges:
-        G[v1].append((v2,w))
+        G[v1][v2]=w
         V.add(v1)
         V.add(v2)
     return G, V
-
-def check_cycles(G, distance):
-    for v1 in G:
-        for v2, w in G[v1]:
-            if distance[v1] < maxsize and distance[v1] + w < distance[v2]: return True
-    return False
-
-def build_path(previous):
-    next = {}
-    for k in previous: next[previous[k]] = k
-    path = [next[None]]
-    while path[-1] in next and next[path[-1]] not in path: path.append(next[path[-1]])
-    return path
-
-def bellman_ford(G, V, start):
-    distance, previous = {}, {}
-    for node in V: distance[node], previous[node] = maxsize, None
-    distance[start] = 0
-    for _ in range(len(V)):
-        for v1 in G:
-            for v2, w in G[v1]:
-                if distance[v2] > distance[v1] + w: distance[v2], previous[v2] = distance[v1] + w,  v1
-        # for v1, v2, w in edges:
-        #     if distance[v2] > distance[v1] + w: distance[v2], previous[v2] = distance[v1] + w,  v1
-
-    has_cycles = check_cycles(G,distance)
-    path = [] if has_cycles else build_path(previous)
-    return (has_cycles, distance, previous, path)
 
 edges = [
 (0, 1, -1)
@@ -66,4 +36,41 @@ edges = [
 ,(4, 3, -3)
 ]
 G, V = build_graph(edges)
+
+
+
+def check_cycle(graph, distance):
+    for v1 in graph:
+        for v2 in graph[v1]:
+            c = graph[v1][v2]
+            if distance[v2] > distance[v1]+c: return True
+    return False
+
+def build_path(graph,prev):
+    next = {}
+    for v in prev: next[prev[v]]=v #create dict with inverse previous
+    path = [next[None]] #init path with start node. must be equal to 's'
+    #execute while last element of the path is in next (not none?),
+    #and next mapped node not already in path (to avoid cycles)
+    total_cost = 0
+    while path[-1] in next and next[path[-1]] not in path:
+        path, total_cost = path+[next[path[-1]]], total_cost+graph[path[-1]][next[path[-1]]]
+    return path, total_cost
+
+
+def bellman_ford(graph, vertices, s):
+    distance, prev = {}, {}
+    for v in vertices: distance[v], prev[v] = float('inf'), None
+    distance[s]=0
+
+    for _ in range(len(vertices)):
+        for v1 in graph:
+            for v2 in graph[v1]:
+                c = graph[v1][v2]
+                if distance[v2] > distance[v1]+c: distance[v2], prev[v2] = distance[v1]+c, v1
+
+    neg_cycle = check_cycle(graph, distance)
+    path = ([], 0) if neg_cycle else build_path(graph,prev)
+    return neg_cycle, distance, path
+
 print(bellman_ford(G, V, 0))

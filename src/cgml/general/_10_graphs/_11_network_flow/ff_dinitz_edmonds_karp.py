@@ -67,9 +67,9 @@ def mincut(g,s,t):
     mincutedges = [(v1,v2,g[v1][v2]['capacity']) for v1 in scut for v2 in g[v1] if v2 not in scut]
     return mincutedges
 
-g2 = nx.DiGraph()
-g2.add_nodes_from('ABCDEFGH')
-g2.add_edges_from([
+DWGnet = nx.DiGraph()
+DWGnet.add_nodes_from('ABCDEFGH')
+DWGnet.add_edges_from([
     ('A', 'B', {'capacity': 10, 'flow': 0}),
     ('A', 'C', {'capacity': 5, 'flow': 0}),
     ('A', 'D', {'capacity': 15, 'flow': 0}),
@@ -113,9 +113,9 @@ def draw_graph(graph):
         plt.text(x, y, label, size=14, color=color, horizontalalignment='center', verticalalignment='center')
     plt.show()
 
-maxflow = ford_fulkerson(g2, 'A', 'H')
-draw_graph(g2)
-mincutedges = mincut(g2,'A','H')
+maxflow = ford_fulkerson(DWGnet, 'A', 'H')
+draw_graph(DWGnet)
+mincutedges = mincut(DWGnet, 'A', 'H')
 print('Maxflow for graph: ', maxflow )
 print('Mincut edges: ')
 for v1, v2, c in mincutedges: print('{} -> {} - capacity: {}'.format(v1, v2, c))

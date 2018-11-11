@@ -30,3 +30,5 @@ def knapsack_norep(W,values,weights):
 
 assert knapsack_norep(10,[30,14,16,9],[6,3,4,2]) == 46
 assert knapsack_norep(50,[60, 100, 120],[10, 20, 30]) == 220
+
+

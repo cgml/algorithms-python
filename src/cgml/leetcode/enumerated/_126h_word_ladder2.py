@@ -14,8 +14,7 @@ class Solution:
             hold = defaultdict(list)
             toDel, res = set(), []
             for wd, pths in front.items():
-                nxts = fwords & {wd[:i] + c + wd[i + 1:] \
-                                 for i in range(len(wd)) for c in ascii_lowercase}
+                nxts = fwords & {wd[:i] + c + wd[i + 1:] for i in range(len(wd)) for c in ascii_lowercase}
                 toDel |= nxts
                 for w in nxts:
                     for pth in pths:

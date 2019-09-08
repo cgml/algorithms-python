@@ -21,7 +21,8 @@ class BIT:
         result = 0
         while idx:
             result += self.array[idx]
-            idx -= idx & -idx
+            last_set_bit = idx & -idx
+            idx -= last_set_bit
         return result
 
     def range_query(self, from_idx, to_idx):
@@ -33,7 +34,8 @@ class BIT:
         idx += 1
         while idx < len(self.array):
             self.array[idx] += add
-            idx += idx & -idx
+            last_set_bit = idx & -idx
+            idx += last_set_bit
 
 
 if __name__ == '__main__':

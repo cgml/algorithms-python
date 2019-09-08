@@ -94,14 +94,17 @@ class SolutionBacktrackingDFS:
             if i == len(s) and lb == 0 and rb == 0 and open_ == 0:
                 result.add(str(st))
                 return
-            if lb < 0 or rb < 0 or open_ < 0 or i == len(s):
-                return
+
+            if lb < 0 or rb < 0 or open_ < 0 or i == len(s): return
+
             if s[i] == '(':
                 rip(s, st + s[i], i + 1, lb, rb, open_ + 1)
                 rip(s, st, i + 1, lb - 1, rb, open_)
+
             elif s[i] == ')':
                 rip(s, st + s[i], i + 1, lb, rb, open_ - 1)
                 rip(s, st, i + 1, lb, rb - 1, open_)
+
             else:
                 rip(s, st + s[i], i + 1, lb, rb, open_)
 

@@ -9,12 +9,11 @@ def build_graph(edges):
         V.add(v2)
     return G, V
 
-def check_cycles_queue(G, distance):
-    #TODO - current implementation is not correct
-    return False
-    for v1 in G:
-        for v2, w in G[v1]:
-            if distance[v1] < maxsize and distance[v1] + w < distance[v2]: return True
+def check_cycles_queue(graph, distance):
+    for v1 in graph:
+        for v2 in graph[v1]:
+            c = graph[v1][v2]
+            if distance[v2] > distance[v1]+c: return True
     return False
 
 def build_path(previous):
@@ -36,7 +35,7 @@ def bellman_ford_queue(G, V, start):
                 distance[v2], previous[v2] = distance[v1] + w,  v1
                 if v2 not in queue: queue.append(v2)
             idx += 1
-            if idx % len(V) == 0 and check_cycles_queue(G,distance): return (True, distance, previous, [])
+            #if idx % len(V) == 0 and check_cycles_queue(G,distance): return (True, distance, previous, [])
 
     has_cycles = check_cycles_queue(G,distance)
 

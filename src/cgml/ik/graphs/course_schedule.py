@@ -9,7 +9,6 @@ Topological sort on DAG with built in cycles detection
 '''
 
 def course_schedule(n, ps):
-    # Write your code here
     graph = {}
     for v in range(n):
         graph[v] = []

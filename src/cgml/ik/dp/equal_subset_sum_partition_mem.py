@@ -1,6 +1,7 @@
-# Correct and optimal theoretically, but not optimal in practice
+# Not optimal solution
 def equalSubSetSumPartition(s):
     mem = {}
+
     def _helper(target, i, e, idx):
         if target == 0 and idx <= len(s) and (i + e) > 1 and i < len(s) and e < len(s):
             return []
@@ -20,7 +21,10 @@ def equalSubSetSumPartition(s):
         mem[str(target) + ":" + str(idx)] = result
         return result
 
-    target = sum(s) / 2
+    total = sum(s)
+    if total % 2 != 0:
+        return []
+    target = total / 2
     result = _helper(target=target, i=0, e=0, idx=0)
     if result is not None:
         result = set(result)
